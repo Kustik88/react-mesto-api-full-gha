@@ -1,0 +1,12 @@
+.profile__info {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    width: 100%;
+    position: relative;
+}
+
+@media screen and (max-width: 768px) {
+    .profile__info {
+        margin: 25px auto 0;
+    }
+}

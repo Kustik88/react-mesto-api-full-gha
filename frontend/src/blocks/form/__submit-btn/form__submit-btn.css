@@ -1,0 +1,16 @@
+.form__submit-btn {
+  margin: 216px auto 0;
+  width: 100%;
+  font: inherit;
+  padding: 13px 0;
+  box-sizing: border-box;
+  background-color: white;
+  color: #000;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 121%;
+  border-radius: 2px;
+  cursor: pointer;
+}

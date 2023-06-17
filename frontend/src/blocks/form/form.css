@@ -1,0 +1,9 @@
+.form {
+  max-width: 358px;
+  min-height: 461px;
+  border: 0;
+  margin: 60px auto 80px;
+  padding: 0;
+  text-align: center;
+  color: white;
+}

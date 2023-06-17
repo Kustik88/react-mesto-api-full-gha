@@ -1,0 +1,24 @@
+.content {
+    width: 100%;
+    margin: 40px auto 67px;
+    color: white;
+}
+
+@media screen and (max-width: 1024px) {
+    .content {
+        max-width: calc(100vw - 128px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        max-width: calc(100vw - 64px);
+        margin: 42px auto 48px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .content {
+        max-width: calc(100vw - 38px);
+    }
+}

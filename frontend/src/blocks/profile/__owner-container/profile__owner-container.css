@@ -1,0 +1,11 @@
+.profile__owner-container {
+    width: 100%;
+    position: relative;
+}
+
+@media screen and (max-width: 768px) {
+    .profile__owner-container {
+        max-width: 189px;
+        margin: 0 auto;
+    }
+}

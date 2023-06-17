@@ -1,0 +1,25 @@
+.header__link {
+  max-width: 114px;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 122%;
+  margin: 6px 0 0;
+  color: #FFFFFF;
+  text-align: right;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .header__link {
+      max-width: 89px;
+      font-size: 14px
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .header__link {
+      margin-right: 30px ;
+  }
+}

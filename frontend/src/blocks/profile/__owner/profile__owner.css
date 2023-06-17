@@ -1,0 +1,21 @@
+.profile__owner {
+    max-width: calc(100% - 42px);
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 114%;
+    margin: 22px auto 0 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+    .profile__owner {
+        max-width: 100%;
+        font-size: 27px;
+        line-height: 122%;
+        margin: 0 auto;
+    }
+}

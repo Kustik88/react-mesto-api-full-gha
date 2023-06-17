@@ -1,0 +1,7 @@
+.header__links-container {
+  max-width: fit-content;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 24px;
+}

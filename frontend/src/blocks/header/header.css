@@ -1,0 +1,38 @@
+.header {
+    max-width: 880px;
+    margin: 0 auto;
+    padding-top: 45px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 1024px) {
+    .header {
+        max-width: calc(100vw - 128px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        max-width: calc(100vw - 64px);
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .header {
+        max-width: 100%;
+        padding-top: 28px;
+    }
+}
+
+.header::after {
+    display: block;
+    width: 100%;
+    content: "";
+    border-bottom: 1px solid #545454;
+    position: absolute;
+    opacity: .7;
+    bottom: 0;
+    left: 0;
+}

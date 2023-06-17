@@ -1,0 +1,12 @@
+.form__enter-link {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 121%;
+  max-width: 100%;
+  margin: 15px auto 0;
+  display: block;
+  text-decoration: none;
+  color: white;
+}

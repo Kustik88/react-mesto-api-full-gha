@@ -1,0 +1,16 @@
+.form__input {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 121%;
+  width: 100%;
+  min-height: 29px;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-bottom: 2px solid #CCC;
+  box-sizing: border-box;
+  color: white;
+}

@@ -1,0 +1,11 @@
+.form__input-container {
+  margin: 47px auto 0;
+  max-width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  justify-content: space-between;
+  padding: 0;
+  border: 0;
+}
