@@ -3,6 +3,11 @@ const auth = require('../middlewares/auth')
 const userControllers = require('../controllers/users')
 const { validateUserBody, validateUserParams, validateUserBodyForAuth } = require('../middlewares/validate')
 
+router.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 router.post('/signup', validateUserBodyForAuth, userControllers.createUser)
 router.post('/signin', validateUserBodyForAuth, userControllers.loginUser)
 
