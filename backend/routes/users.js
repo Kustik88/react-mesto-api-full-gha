@@ -5,9 +5,9 @@ const { validateUserBody, validateUserParams, validateUserBodyForAuth } = requir
 
 router.get('/crash-test', () => {
   setTimeout(() => {
-    throw new Error('Сервер сейчас упадёт');
-  }, 0);
-});
+    throw new Error('Сервер сейчас упадёт')
+  }, 0)
+})
 router.post('/signup', validateUserBodyForAuth, userControllers.createUser)
 router.post('/signin', validateUserBodyForAuth, userControllers.loginUser)
 
