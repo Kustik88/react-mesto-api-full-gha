@@ -7,7 +7,7 @@
 
 ## Ссылки на проект
 
-IP 158.160.54.132
+IP 51.250.70.214
 
 Frontend https://domainname.kust.nomoredomains.rocks
 
