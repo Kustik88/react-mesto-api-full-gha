@@ -42,22 +42,31 @@ const validateUserBodyForAuth = celebrate({
       .required(),
   }),
 })
-const validateUserBody = celebrate({
+
+const validateUserBodyForPatchUserInfo = celebrate({
   body: Joi.object({
     name: Joi
       .string()
       .default('Жак-Ив Кусто')
       .min(2)
-      .max(30),
+      .max(30)
+      .required(),
     about: Joi
       .string()
       .default('Исследователь')
       .min(2)
-      .max(30),
+      .max(30)
+      .required(),
+  }),
+})
+
+const validateUserBodyForPatchAvatar = celebrate({
+  body: Joi.object({
     avatar: Joi
       .string()
       .default('https://pictures.s3.yandex.net/resources/jacques-cousteau_1604399756.png')
-      .regex(regexForLink),
+      .regex(regexForLink)
+      .required(),
   }),
 })
 
@@ -84,7 +93,8 @@ const validateCardParams = celebrate({
 })
 
 module.exports = {
-  validateUserBody,
+  validateUserBodyForPatchUserInfo,
+  validateUserBodyForPatchAvatar,
   validateUserParams,
   validateUserBodyForAuth,
   validateCardBodyForPost,
