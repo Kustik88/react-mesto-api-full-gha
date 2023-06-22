@@ -19,10 +19,10 @@ router.post('/signin', validateUserBodyForSignIn, userControllers.loginUser)
 
 router.use(auth)
 
-router.get('/', userControllers.getUsers)
-router.get('/:userId', validateUserParams, userControllers.getUserById)
-router.get('/me', userControllers.getUserById)
-router.patch('/me', validateUserBodyForPatchUserInfo, userControllers.editUserInfo)
-router.patch('/me/avatar', validateUserBodyForPatchAvatar, userControllers.editUserAvatar)
+router.get('/users', userControllers.getUsers)
+router.get('/users/:userId', validateUserParams, userControllers.getUserById)
+router.get('/users/me', userControllers.getUserById)
+router.patch('/users/me', validateUserBodyForPatchUserInfo, userControllers.editUserInfo)
+router.patch('/users/me/avatar', validateUserBodyForPatchAvatar, userControllers.editUserAvatar)
 
 module.exports = router
