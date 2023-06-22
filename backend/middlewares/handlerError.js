@@ -5,7 +5,6 @@ const handlerError = (err, req, res, next) => {
       ? 400
       : 500,
     message,
-    stack,
   } = err
 
   res
@@ -14,7 +13,6 @@ const handlerError = (err, req, res, next) => {
       message: statusCode === 500
         ? 'Ошибка сервера'
         : message,
-      stack,
     })
   next()
 }
