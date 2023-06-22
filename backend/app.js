@@ -18,7 +18,7 @@ app.use(helmet())
 app.use(requestLogger)
 app.use('/', routerAuth)
 app.use('/users', routerUsers)
-app.use(routerCards)
+app.use('/cards', routerCards)
 app.use((req, res, next) => {
   next(new NotFoundError('Запрашиваемая страница не найдена'))
 })
