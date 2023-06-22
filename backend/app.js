@@ -15,7 +15,7 @@ const app = express()
 app.use(express.json())
 app.use(helmet())
 app.use(requestLogger)
-app.use(routerUsers)
+app.use('/users', routerUsers)
 app.use(routerCards)
 app.use((req, res, next) => {
   next(new NotFoundError('Запрашиваемая страница не найдена'))
