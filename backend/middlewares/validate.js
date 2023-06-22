@@ -76,9 +76,6 @@ const validateCardBodyForPost = celebrate({
     link: Joi.string().required().regex(regexForLink),
     likes: Joi.array().unique().items(Joi.string()).default([]),
   }),
-  user: Joi.object().keys({
-    _id: Joi.string().required(),
-  }),
 })
 
 const validateCardParams = celebrate({
