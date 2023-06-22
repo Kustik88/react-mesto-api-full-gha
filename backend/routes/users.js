@@ -3,8 +3,6 @@ const auth = require('../middlewares/auth')
 const userControllers = require('../controllers/users')
 const {
   validateUserParams,
-  validateUserBodyForSignUp,
-  validateUserBodyForSignIn,
   validateUserBodyForPatchUserInfo,
   validateUserBodyForPatchAvatar,
 } = require('../middlewares/validate')
