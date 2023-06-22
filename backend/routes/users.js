@@ -9,14 +9,6 @@ const {
   validateUserBodyForPatchAvatar,
 } = require('../middlewares/validate')
 
-router.get('/crash-test', () => {
-  setTimeout(() => {
-    throw new Error('Сервер сейчас упадёт')
-  }, 0)
-})
-router.post('/signup', validateUserBodyForSignUp, userControllers.createUser)
-router.post('/signin', validateUserBodyForSignIn, userControllers.loginUser)
-
 router.use(auth)
 
 router.get('/', userControllers.getUsers)
