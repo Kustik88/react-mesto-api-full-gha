@@ -1,7 +1,8 @@
+const { default: mongoose } = require('mongoose')
+
 const handlerError = (err, req, res, next) => {
   const {
-    name,
-    statusCode = (name === 'CastError' || name === 'ValidationError')
+    statusCode = (err instanceof mongoose.Error)
       ? 400
       : 500,
     message,
