@@ -31,7 +31,7 @@ const deleteCard = (req, res, next) => {
       if (card.owner.toString() !== req.user._id) {
         return next(new ForbiddenError('Вы не являетесь владельцем карточки'))
       }
-      return cardModel.findByIdAndRemove(req.params.cardId)
+      return card.deleteOne()
     })
     .then((card) => res.send(card))
     .catch(next)
