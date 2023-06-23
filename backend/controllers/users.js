@@ -64,36 +64,26 @@ const createUser = (req, res, next) => {
     .catch(next)
 }
 
-const editUserInfo = (req, res, next) => {
-  const { name, about } = req.body
-  userModel
-    .findByIdAndUpdate(
-      req.user._id,
-      { name, about },
-      {
-        new: true,
-        runValidators: true,
-      },
-    )
+const userUpdater = (req, res, next, body) => {
+  const updateObject = Object.keys(body)
+    .reduce((obj, key) => (
+      { ...obj, [key]: body[key] }
+    ), {})
+
+  userModel.findByIdAndUpdate(req.user._id, updateObject, { new: true, runValidators: true })
     .orFail(() => next(new NotFoundError('Пользователь c таким id не найден')))
     .then((user) => res.status(OK).send(user))
     .catch(next)
 }
 
+const editUserInfo = (req, res, next) => {
+  const { name, about } = req.body
+  userUpdater(req, res, next, { name, about })
+}
+
 const editUserAvatar = (req, res, next) => {
   const { avatar } = req.body
-  userModel
-    .findByIdAndUpdate(
-      req.user._id,
-      { avatar },
-      {
-        new: true,
-        runValidators: true,
-      },
-    )
-    .orFail(() => next(new NotFoundError('Пользователь c таким id не найден')))
-    .then((user) => res.status(OK).send(user))
-    .catch(next)
+  userUpdater(req, res, next, { avatar })
 }
 
 const loginUser = (req, res, next) => {
