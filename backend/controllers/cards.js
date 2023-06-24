@@ -1,6 +1,6 @@
 const cardModel = require('../models/card')
 const {
-  OK,
+  // OK,
   CREATED,
 } = require('../constants/statusCodes')
 
@@ -38,10 +38,10 @@ const deleteCard = (req, res, next) => {
     .catch(next)
 }
 
-const likeCard = (req, res, next) => {
+const updateCard = (req, res, next, method) => {
   cardModel.findByIdAndUpdate(
     req.params.cardId,
-    { $addToSet: { likes: req.user._id } },
+    { [method]: { likes: req.user._id } },
     {
       new: true,
     },
@@ -51,18 +51,12 @@ const likeCard = (req, res, next) => {
     .catch(next)
 }
 
+const likeCard = (req, res, next) => {
+  updateCard(req, res, next, '$addToSet')
+}
+
 const dislikeCard = (req, res, next) => {
-  cardModel.findByIdAndUpdate(
-    req.params.cardId,
-    { $pull: { likes: req.user._id } },
-    {
-      new: true,
-      runValidators: true,
-    },
-  )
-    .orFail(() => next(new NotFoundError('Карточка c таким id не найдена')))
-    .then((card) => res.status(OK).send(card))
-    .catch(next)
+  updateCard(req, res, next, '$pull')
 }
 
 module.exports = {

@@ -64,7 +64,7 @@ const createUser = (req, res, next) => {
     .catch(next)
 }
 
-const userUpdater = (req, res, next, body) => {
+const updateUser = (req, res, next, body) => {
   const updateObject = Object.keys(body)
     .reduce((obj, key) => (
       { ...obj, [key]: body[key] }
@@ -78,12 +78,12 @@ const userUpdater = (req, res, next, body) => {
 
 const editUserInfo = (req, res, next) => {
   const { name, about } = req.body
-  userUpdater(req, res, next, { name, about })
+  updateUser(req, res, next, { name, about })
 }
 
 const editUserAvatar = (req, res, next) => {
   const { avatar } = req.body
-  userUpdater(req, res, next, { avatar })
+  updateUser(req, res, next, { avatar })
 }
 
 const loginUser = (req, res, next) => {
